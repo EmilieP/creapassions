@@ -1,0 +1,45 @@
+doctype html
+
+html lang="fr"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title = content_for?(:title) ? yield(:title) : "Creapassions"
+
+    = stylesheet_link_tag    "creapassions/application"
+    = javascript_include_tag "vendor/modernizr"
+    = csrf_meta_tags
+
+  body
+    div class="contain-to-grid"
+      nav class="top-bar" data-topbar=""
+        ul class="title-area"
+          li class="name"
+            h1 = link_to 'Livres finances', root_path
+          li class="toggle-topbar"
+            a href="#"
+              span Menu
+        section class="top-bar-section"
+          ul class="left"
+            li class="m-nav--login"
+              a href="#" A paraitres
+            li class="m-nav--login"
+              a href="#" Nouveautés
+            li class="m-nav--login"
+              a href="#" Tous nos livres
+            li class="m-nav--login"
+              a href="#" Genre
+            li class="m-nav--login"
+              a href="#" Contact
+
+    - [:alert, :notice].each do |type|
+      - if flash[type].present?
+        div class="alert-box"
+          == flash[type]
+
+    div class="row"
+      div class="small-11 small-centered columns"
+        == yield
+
+  = javascript_include_tag "application"
