@@ -19,7 +19,7 @@ class CreateBooks < ActiveRecord::Migration
       t.boolean   :appearance_random
       t.boolean   :showroom
       t.text      :description
-      t.string    :image
+      t.string    :image_url
 
       t.timestamps
     end

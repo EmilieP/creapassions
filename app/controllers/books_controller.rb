@@ -43,6 +43,24 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :description, :image)
+    params.require(:book).permit(
+  :title,
+  :subtitle,
+  :page_count,
+  :color_page_count,
+  :bw_page_count,
+  :isbn,
+  :ean,
+  :price_ttc,
+  :c4_extended,
+  :c4_reduced,
+  :c4_argu,
+  :visible,
+  :appearance_percentage,
+  :appearance_random,
+  :showroom,
+  :description,
+  :image_url
+    )
   end
 end
