@@ -2,12 +2,13 @@ h1 Tous nos livres
 
 div class="row"
   - @books.each_with_index do |book, i|
-    div class="large-4 columns"
-      = link_to book_path(book) do
-        = image_tag book.image_url
-        = book.title
-        = book.description
+    div class="small-6 medium-4 columns"
+      div style="position:relative;"
+        = link_to book_path(book) do
+          = image_tag book.image_url
+          = book.title
+          = book.description
 
 div class="row"
   div class="pagination-centered"
-    = paginate @books, :theme => 'foundation'
+    = paginate @books, theme: 'foundation'
