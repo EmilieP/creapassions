@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'coffee-rails'
   s.add_dependency 'carrierwave'
   s.add_dependency 'simple_form'
+  s.add_dependency 'font-awesome-rails'
 
   s.add_development_dependency "sqlite3"
 end
