@@ -2,20 +2,56 @@ figure {
   position: relative;
 
   img {
+   background-color: $body-color;
     display: block;
     max-width: 350px;
     position: relative;
+
+    // box-shadow: 3px 3px 3px #7C7C7C;
+  }
+  img:after{
+    border: 20px solid black;
+    content: "";
+    box-shadow: 0 15px 10px #777;
+     transform: rotate(3deg);
+     background: #777;
+       z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  // left: auto;
+  width: 50%;
   }
 
   figcaption {
-    background-color: black;
-    color: white;
+    // background-color: black;
+
+
+    background-image:url(http://designmoo.com/wp-content/uploads/2010/10/graphic_paper.png);
+    color: $black;
     font-size: 10px;
     left: 0;
     padding: rem-calc(20);
     position: absolute;
     top: 0;
+
+    h3{
+      // font-family: 'The Girl Next Door', cursive;
+      // font-family: 'Grand Hotel', cursive;
+      font-family: 'Gochi Hand', cursive;
+      font-size: emCalc(35);
+      line-height: emCalc(25)
+
+    }
+    p{
+      font-size: emCalc(25);
+      font-style: bold;
+      margin-top: emCalc(35);
+    }
+
   }
+
 }
 
 // .grid {
@@ -37,7 +73,7 @@ figure {
     transform-style: preserve-3d;
   }
   figure > div {
-    overflow: hidden;
+    // overflow: hidden;
   }
   figure img {
     transition: transform 0.4s;
@@ -67,4 +103,5 @@ figure {
   bottom: 20px;
   position: absolute;
   right: 20px;
+  font-size: emCalc(30);
 }
