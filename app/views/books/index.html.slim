@@ -1,52 +1,43 @@
-
 h1 Tous nos livres
 
-section class="portfolio-container row"
 
-  div class="container medium-9 columns"
-    div class="images-container"
-      div class="row"
-        ul class="large-block-grid-2 small-block-grid-1"
-          - @books.each_with_index do |book, i|
-            li class="img-container"
-              figure class="recent-work-img"
-                img alt="img" src="#{book.image_url}"
-                  figcaption class="rollover"
-                    ul class="enlarge clearfix"
-                      li
-                        = link_to book_path(book) do
-                          = fa_icon "search 4x"
-                      / li class="link"
-                      /   a href="#"
-                      /     i class="fi-search"
-                    div class="content-container"
-                      h5 class="title"
-                        = book.title
-                      p class="content"
-                        = book.subtitle
-                        / a class="read-more" href="#" title="Read More ..."
-                        /   | &nbsp; &nbsp;
-                        /   i class="fa fa-search"
 
-  div class="large-3 medium-4 columns"
-    div class="hide-for-small"
-      div class="sidebar"
-        nav
-          ul class="side-nav"
-            li class="active"
-              a href="#" Link 1
-            li
-              a href="#" Link 2
-            li
-              a href="#" Link 3
-            li
-              a href="#" Link 4
+div class="row collapse"
+  ul class="grid cs-style-4 no-bullet large-block-grid-2 small-block-grid-1"
+    li
+      figure
+        div
+          img src="http://boutique-creapassions.com/cover_600/400.jpg"
+        figcaption
+          h3 Safari
+          span Jacob Cummings, klsjlksjlkdjsdjcslkjdlj
+          a href="http://boutique-creapassions.com" Take a look
+    li
+      figure
+        div
+          img src="http://boutique-creapassions.com/cover_600/401.jpg"
+        figcaption
+          h3 Safari
+          span Jacob Cummings, klsjlksjlkdjsdjcslkjdlj
+          a href="http://boutique-creapassions.com" Take a look
+    li
+      figure
+        div
+          img src="http://boutique-creapassions.com/cover_600/402.jpg"
+        figcaption
+          h3 Safari
+          span Jacob Cummings, klsjlksjlkdjsdjcslkjdlj
+          a href="http://boutique-creapassions.com" Take a look
+    li
+      figure
+        div
+          img src="http://boutique-creapassions.com/cover_600/395.jpg"
+        figcaption
+          h3 Safari
+          span Jacob Cummings, klsjlksjlkdjsdjcslkjdlj
+          a href="http://boutique-creapassions.com" Take a look
+
+
 div class="row"
   div class="pagination-centered"
     = paginate @books, theme: 'foundation'
-
-
-
-
-
-

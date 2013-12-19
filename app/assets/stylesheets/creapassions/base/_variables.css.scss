@@ -82,7 +82,7 @@ $cursor-disabled-value:   not-allowed;
 // Grid Variables
 //
 
-$row-width:     emCalc(960);
+$row-width:     emCalc(1000);
 $column-gutter: emCalc(20);
 $total-columns: 12;
 
@@ -97,6 +97,6 @@ $total-columns: 12;
 // Style anchors
 
 // $anchor-text-decoration: none;
-$anchor-font-color: $blue;
-$anchor-font-color-hover: $black;
+$anchor-font-color: $pink-dark;
+$anchor-font-color-hover: $pink;
 
