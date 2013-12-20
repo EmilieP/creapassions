@@ -1,3 +1,6 @@
+
+
+
 figure {
   position: relative;
 
@@ -6,29 +9,43 @@ figure {
     display: block;
     max-width: 350px;
     position: relative;
-
-    // box-shadow: 3px 3px 3px #7C7C7C;
   }
-  img:after{
-    border: 20px solid black;
+
+  .box {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background-color: #fff;
+    @include x-box-shadow(0 1px 5px rgba(0,0,0,0.25), 0 0 50px rgba(0,0,0,0.1) inset);
+    border-radius: 0%     0%     1%     0% /     0%     0%     20%     0%;
+
+  &:before,
+  &:after {
+    z-index: -1;
+    position: absolute;
     content: "";
-    box-shadow: 0 15px 10px #777;
-     transform: rotate(3deg);
-     background: #777;
-       z-index: -1;
-  position: absolute;
-  content: "";
-  bottom: 0;
-  right: 0;
-  // left: auto;
-  width: 50%;
+    width: 98%;
+    height: 96%;
+    bottom: 0px;
+    right: 0px;
+    background: #eee;
+    border: 1px solid #ccc;
+  }
+
+  &:before {
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.1);
+     @include x-transform(skew(2deg,2deg) translate(3px,8px));
+  }
+
+  &:after {
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+     @include x-transform(skew(2deg,2deg) translate(-1px,2px));
+    }
   }
 
   figcaption {
-    // background-color: black;
-
-
     background-image:url(http://designmoo.com/wp-content/uploads/2010/10/graphic_paper.png);
+    // background-image:url(http://2.bp.blogspot.com/-JL6ArHDHSOo/UQC1pMRXKvI/AAAAAAAAMTc/GqMuX7Q6vhE/s1600/PromotionalSpiralNotebookWithStickyNotes13783.jpg);
     color: $black;
     font-size: 10px;
     left: 0;
@@ -40,27 +57,19 @@ figure {
       // font-family: 'The Girl Next Door', cursive;
       // font-family: 'Grand Hotel', cursive;
       font-family: 'Gochi Hand', cursive;
-      font-size: emCalc(35);
-      line-height: emCalc(25)
+      font-size: rem-calc(35);
+      line-height: rem-calc(25)
 
     }
     p{
-      font-size: emCalc(25);
+      font-size: rem-calc(25);
       font-style: bold;
-      margin-top: emCalc(35);
+      margin-top: rem-calc(35);
     }
 
   }
 
 }
-
-// .grid {
-//     margin: 0 auto;
-//     max-width: 1300px;
-//     padding: 20px 20px 100px;
-//     text-align: center;
-// }
-
 
 // Animation
 
@@ -75,7 +84,7 @@ figure {
   figure > div {
     // overflow: hidden;
   }
-  figure img {
+  figure img, figure .box {
     transition: transform 0.4s;
   }
   figcaption {
@@ -89,9 +98,11 @@ figure {
   }
 }
 
-.no-touch .cs-style-4 figure:hover img,
-.cs-style-4 figure.cs-hover img {
-  transform: translateX(25%);
+// .no-touch .cs-style-4 figure:hover img,
+.no-touch .cs-style-4 figure:hover .box,
+.cs-style-4 figure.cs-hover img,
+.cs-style-4 figure.cs-hover .box {
+  // transform: translateX(25%);
 }
 .no-touch .cs-style-4 figure:hover figcaption,
 .cs-style-4 figure.cs-hover figcaption {
@@ -103,5 +114,5 @@ figure {
   bottom: 20px;
   position: absolute;
   right: 20px;
-  font-size: emCalc(30);
+  font-size: rem-calc(30);
 }

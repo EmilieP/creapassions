@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-rails'
   s.add_dependency 'sass-rails'
   s.add_dependency 'coffee-rails'
+  s.add_dependency 'compass'
   s.add_dependency 'carrierwave'
   s.add_dependency 'simple_form'
   s.add_dependency 'font-awesome-rails'
