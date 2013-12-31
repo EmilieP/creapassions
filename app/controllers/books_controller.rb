@@ -3,7 +3,11 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    @books = Book.all.page(params[:page])
+    respond_to do |format|
+      format.html { @books = Book.all.page(params[:page]) }
+      format.json { @books = Book.all.page(params[:page]) }
+    end
+    # @books = Book.all.page(params[:page])
   end
 
   def show
